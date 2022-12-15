@@ -14,7 +14,7 @@
   (if (= end 1) (elt sequence 0) (subseq sequence 0 end)))
 
 (defun tail (sequence &optional (start 1))
-  (subseq sequence start))
+  (if (= 1 (length sequence)) sequence (subseq sequence start)))
 
 (defun mappend (fn &rest lists)
   "like mapcan, but non-destructive"
